@@ -1,0 +1,24 @@
+{
+  "name": "driper",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "dependencies": {
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.6.9",
+    "express": "~4.16.0",
+    "http-errors": "~1.6.2",
+    "jade": "~1.11.0",
+    "morgan": "~1.9.0",
+    "aso": "^1.0.0",
+    "google-play-scraper": "^6.1.0",
+    "keyword-extractor": "0.0.15",
+    "nlcst-to-string": "^2.0.2",
+    "retext": "^5.0.0",
+    "retext-intensify": "^3.0.1",
+    "retext-keywords": "^4.0.1",
+    "to-vfile": "^5.0.1"
+  }
+}
