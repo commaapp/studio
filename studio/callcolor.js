@@ -26,14 +26,14 @@ router.get('/', function (req, res, next) {
                 result.push({
                     image: 'http://103.27.237.93/callcolor/images/' + nameFile + '.png',
                     name: nameFile,
-                    source: 'http://103.27.237.93/callcolor/images/' + nameFile + '.png',
+                    source: 'http://103.27.237.93/callcolor/sources/' + nameFile + '.png',
                     type: 'image',
                 })
             } else {
                 result.push({
-                    image: 'http://103.27.237.93/callcolor/images/' + nameFile + '.mp4',
+                    image: 'http://103.27.237.93/callcolor/images/' + nameFile + '.png',
                     name: nameFile,
-                    source: 'http://103.27.237.93/callcolor/images/' + nameFile + '.mp4',
+                    source: 'http://103.27.237.93/callcolor/sources/' + nameFile + '.mp4',
                     type: 'video',
                 })
                 console.log(nameFile + '.mp4')
