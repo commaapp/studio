@@ -1,20 +1,23 @@
+var express = require('express');
+var router = express.Router();
 const fs = require('fs');
 const path = require('path');
+const NodeID3 = require('node-id3')
+// try {
+var result = [];
+fs.readdirSync(__dirname + '/public/o2o').forEach(file => {
+    file = __dirname + "/public/o2o/" + file
+    let tags = NodeID3.read(file)
+ 
+    NodeID3.read(file, function (err, tags) {
+        console.log(file);
 
+        result.push({
+            title: tags.title,
+            artist: tags.artist,
+            url: path.basename(file),
+        })
 
-fs.readdirSync('./public/callcolor/images').forEach(file => {
-    // console.log(path.basename(file));
-    // console.log(path.extname(file));
-    // console.log(path.basename(file,'.mp4'));
-    // console.log(path.basename(file).split('.').slice(0, -1).join('.'));
-  console.log(  fs.readdirSync('./public/callcolor/images').length);
-  
-    var nameFile=path.basename(file).split('.').slice(0, -1).join('.');
-    if (fs.existsSync('./public/callcolor/sources/'+nameFile+'.png')) {
-        console.log(nameFile+'.png')
-    }else{
-        console.log(nameFile+'.mp4')
-    }
-
-
-  })
+    })
+});
+console.log({re:result});

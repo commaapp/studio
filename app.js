@@ -25,6 +25,7 @@ app.use('/top', require('./app/top'));
 app.use('/full', require('./app/full'));
 app.use('/thuhang', require('./app/thuhang'));
 app.use('/callcolor', require('./studio/callcolor'));
+app.use('/o2o', require('./studio/music2t'));
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
     next(createError(404));
