@@ -13,15 +13,15 @@ router.get('/', function (req, res, next) {
         }
         result = []
         console.log(__dirname + '/public/callcolor/images');
-        fs.readdirSync(__dirname +'/public/callcolor/images').forEach(file => {
+        fs.readdirSync(__dirname + '/public/callcolor/images').forEach(file => {
             // console.log(path.basename(file));
             // console.log(path.extname(file));
             // console.log(path.basename(file,'.mp4'));
             // console.log(path.basename(file).split('.').slice(0, -1).join('.'));
-            console.log(fs.readdirSync(__dirname +'/public/callcolor/images').length);
+            console.log(fs.readdirSync(__dirname + '/public/callcolor/images').length);
 
             var nameFile = path.basename(file).split('.').slice(0, -1).join('.');
-            if (fs.existsSync(__dirname +'/public/callcolor/sources/' + nameFile + '.png')) {
+            if (fs.existsSync(__dirname + '/public/callcolor/sources/' + nameFile + '.png')) {
 
                 console.log(nameFile + '.png')
                 result.push({
@@ -51,6 +51,20 @@ router.get('/', function (req, res, next) {
         }
         res.json(json)
     } catch (error) {
+
+        var request = require("request")
+
+        var url = 'http://data.crazymz.com/colorphone/api_v2.php'
+
+        request({
+            url: url,
+            json: true
+        }, function (error, response, body) {
+
+            if (!error && response.statusCode === 200) {
+                res.json(body) // Print the json response
+            }
+        })
         res.json({
             error: true,
             errors: [error.messages],
