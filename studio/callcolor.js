@@ -12,16 +12,16 @@ router.get('/', function (req, res, next) {
             type: '',
         }
         result = []
-        console.log('./public/callcolor/images');
-        fs.readdirSync('./public/callcolor/images').forEach(file => {
+        console.log(__dirname + '/public/callcolor/images');
+        fs.readdirSync(__dirname +'/public/callcolor/images').forEach(file => {
             // console.log(path.basename(file));
             // console.log(path.extname(file));
             // console.log(path.basename(file,'.mp4'));
             // console.log(path.basename(file).split('.').slice(0, -1).join('.'));
-            console.log(fs.readdirSync('./public/callcolor/images').length);
+            console.log(fs.readdirSync(__dirname +'/public/callcolor/images').length);
 
             var nameFile = path.basename(file).split('.').slice(0, -1).join('.');
-            if (fs.existsSync('./public/callcolor/sources/' + nameFile + '.png')) {
+            if (fs.existsSync(__dirname +'/public/callcolor/sources/' + nameFile + '.png')) {
 
                 console.log(nameFile + '.png')
                 result.push({
