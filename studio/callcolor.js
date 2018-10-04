@@ -65,12 +65,12 @@ router.get('/', function (req, res, next) {
                 res.json(body) // Print the json response
             }
         })
-        res.json({
-            error: true,
-            errors: [error.messages],
-            messages: '',
-            results: [],
-        })
+        // res.json({
+        //     error: true,
+        //     errors: [error.messages],
+        //     messages: '',
+        //     results: [],
+        // })
     }
 
 });
